@@ -36,6 +36,13 @@ This package implements the StreamableHTTP transport layer** that plugs into Sup
 composer require superconductor-mcp/streamable-http
 ```
 
+
+(Optional )Publish the configuration file:
+
+```bash
+php artisan vendor:publish --tag=mcp.streamable-http
+```
+
 **That's it!** Your Laravel app now has working MCP HTTP endpoints:
 
 - **`POST /mcp`** - Ready for any MCP client

@@ -23,7 +23,9 @@ class SuperconductorStreamableHttpServiceProvider extends ServiceProvider
 
     protected function publishConfigs() : void
     {
-        $this->publishes($this->config, 'mcp');
+        $this->publishes([
+            $this->config['mcp.protocols.streamable-http'] => config_path('mcp/protocols/streamable-http.php'),
+        ], 'mcp.streamable-http');
     }
 
     protected function registerConfigs() : void
