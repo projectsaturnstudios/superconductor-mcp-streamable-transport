@@ -1,8 +1,8 @@
 {
-    "name": "superconductor-mcp/streamable-http",
-    "description": "StreamableHTTP transport protocol for the Superconductor MCP framework.",
+    "name": "superconductor/streamable-http-transport",
+    "description": "Streamable HTTP transport protocol for the Superconductor MCP framework.",
     "type": "library",
-    "version": "0.2.2",
+    "version": "20241105.5.0",
     "license": "MIT",
     "authors": [
         {
@@ -12,25 +12,52 @@
     ],
     "require": {
         "php": "^8.2",
-        "projectsaturnstudios/superconductor-core": "^0.2"
+        "superconductor/mcp": "^20241105.5.0",
+        "lorisleiva/laravel-actions": "^2.6",
+        "projectsaturnstudios/quickuuid": "^0.2.0",
+        "projectsaturnstudios/laravel-design-patterns": "^0.1.0"
     },
     "autoload": {
         "psr-4": {
-            "Superconductor\\StreamableHttp\\": "src/"
+            "Superconductor\\Transports\\StreamableHttp\\": "src/"
         },
         "files": [
-            "src/Helpers/functions.php"
+            "src/Helpers/streamable_routing.php"
         ]
     },
     "minimum-stability": "stable",
     "extra": {
         "laravel": {
             "providers": [
-                "Superconductor\\StreamableHttp\\Providers\\SuperconductorStreamableHttpServiceProvider"
+                "Superconductor\\Transports\\StreamableHttp\\Providers\\StreamableHttpTransportServiceProvider"
             ],
             "aliases": {
 
             }
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.8",
+        "react/event-loop": "^1.5",
+        "react/stream": "^1.4",
+        "illuminate/container": "^12.0",
+        "illuminate/support": "^12.24",
+        "illuminate/events": "^12.24"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "repositories": {
+        "monorepo": {
+            "type": "path",
+            "url": "../../*/*"
         }
     }
 }
