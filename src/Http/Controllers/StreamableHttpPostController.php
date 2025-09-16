@@ -54,10 +54,6 @@ class StreamableHttpPostController
         /** @var MCPServer $mcp_server */
         $mcp_server = new $server_route->class_name();
 
-        logger()->log('info', 'StreamableHttpPostController - Message Received', [
-            'message' => $request,
-        ]);
-
         $message = RpcMessage::fromJsonRpc($request);
         if($message instanceof RpcRequest)
         {

@@ -2,7 +2,7 @@
     "name": "superconductor/streamable-http-transport",
     "description": "Streamable HTTP transport protocol for the Superconductor MCP framework.",
     "type": "library",
-    "version": "20241105.5.0",
+    "version": "20241105.5.1",
     "license": "MIT",
     "authors": [
         {
